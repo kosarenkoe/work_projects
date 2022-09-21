@@ -48,6 +48,20 @@ jobs:
       name: Production
       url: 'http://www.myapp.com'
     steps:
-      - name: Deploy
-        run: echo I am deploying! 
+      - name: Kubernetes Deployment
+  # You may pin to the exact commit or the version.
+  # uses: TanmoySG/k-deploy-action@5f80b044093190fc872281a5f6372105f66260b6
+  uses: TanmoySG/k-deploy-action@v0.2.2-alpha
+  with:
+    # Path to Kubeconfig
+    kubeconfig: 
+    # Kubernetes Namespace
+    namespace: # default is default
+    # Path to manifest Files
+    manifest: # optional
+    # Boolean. If Kustomization is required
+    kustomize: 
+    # Path to overlay for kustomization
+    overlay: # optional
+        -
     
